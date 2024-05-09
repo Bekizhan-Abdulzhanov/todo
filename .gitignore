@@ -1,0 +1,6 @@
+env/
+__pycache__
+
+dbd.sqlite.3/
+.idea/
+media/
