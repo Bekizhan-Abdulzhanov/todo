@@ -5,14 +5,14 @@ from apps.todo.models import Todo
 
 def homepage(request):
     todos = Todo.objects.all()
-    return render(request,'index.html',locals())
+    return render(request,'homepage.html',locals())
 
 def create(request):
     if request.method == 'POST':
         name = request.POST.get('title')
         text = request.POST.get('description')
         todos = Todo.objects.create(title=name,text=text,)
-        return redirect('homepage')
+        return redirect('index')
     return render(request,'create.html')
 
 def retrieve(request,pk):

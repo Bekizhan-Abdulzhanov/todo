@@ -3,8 +3,10 @@ from django.urls import path
 from apps.todo import views 
 
 urlpatterns = [
-    path('', views.homepage,name='index'),
-    path('add/',views.retrieve,name='add'),
-    path('update/<int:todo_id>',views.update,name='update'),
-    path('delete/<int:todo_id>',views.destroy,name='delete')
+    path('', views.homepage, name='index'),
+    path('create/',views.create,name='create'),
+    path('detail/<int:pk>/',views.retrieve,name='detail'),
+    path('delete/<int:pk>/',views.destroy,name='delete'),
+    path('update/<int:pk>/',views.update,name='update'),
+    
 ]
